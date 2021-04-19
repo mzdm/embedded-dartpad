@@ -2,22 +2,21 @@ package com.github.mzdm.embedded_dartpad.toolwindow
 
 import com.github.mzdm.embedded_dartpad.browser.Browser
 import com.github.mzdm.embedded_dartpad.components.ComponentPanel
-import com.github.mzdm.embedded_dartpad.components.clickableLink
-import com.github.mzdm.embedded_dartpad.components.statusMessage
 import com.github.mzdm.embedded_dartpad.components.toolbar.toolbarActions
 import com.github.mzdm.embedded_dartpad.models.DartPadSettings
 import com.github.mzdm.embedded_dartpad.services.SettingsService
 import com.github.mzdm.embedded_dartpad.utils.HtmlContentRenderer
 import com.github.mzdm.embedded_dartpad.utils.addAll
+import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.SimpleToolWindowPanel
 import com.intellij.ui.jcef.JBCefApp
+import com.intellij.ui.layout.panel
 import javax.swing.BoxLayout
 import javax.swing.SwingUtilities
 
 class DartPadWindow(private val project: Project) : SimpleToolWindowPanel(false) {
-    private val browser = Browser()
 
     private val settingsService: SettingsService
         get() = project.service()
@@ -25,7 +24,13 @@ class DartPadWindow(private val project: Project) : SimpleToolWindowPanel(false)
         get() = settingsService.settings
 
     init {
-        if (!JBCefApp.isSupported()) {
+        val isJcefSupported: Boolean = try {
+            JBCefApp.isSupported()
+        } catch (t: Throwable) {
+            false
+        }
+
+        if (!isJcefSupported) {
             showUnsupportedMessage()
         } else {
             SwingUtilities.invokeLater {
@@ -35,7 +40,8 @@ class DartPadWindow(private val project: Project) : SimpleToolWindowPanel(false)
     }
 
     private fun initBrowserToolWindow() {
-        refresh()
+        val browser = Browser()
+        refresh(browser)
 
         val verticalLayout = BoxLayout(this, BoxLayout.Y_AXIS)
         layout = verticalLayout
@@ -44,7 +50,7 @@ class DartPadWindow(private val project: Project) : SimpleToolWindowPanel(false)
             ComponentPanel.of(
                 toolbarActions(
                     project,
-                    onRefresh = { refresh() },
+                    onRefresh = { refresh(browser) },
                 ),
                 browser.component,
             ),
@@ -54,16 +60,22 @@ class DartPadWindow(private val project: Project) : SimpleToolWindowPanel(false)
         repaint()
     }
 
-    private fun refresh() {
+    private fun refresh(browser: Browser) {
         browser.loadHTML(HtmlContentRenderer.load(settings))
     }
 
     private fun showUnsupportedMessage() {
-        addAll(
-            ComponentPanel.of(
-                statusMessage("Dart Pad is not supported in this IDE environment."),
-                clickableLink("Read more ...", "https://github.com/mzdm/embedded-dartpad#troubleshooting"),
-            ),
-        )
+        add(panel {
+            row {
+                row {
+                    label("Embedded DartPad is not supported in this IDE version.")
+                }
+                row {
+                    link("Read more ...") {
+                        BrowserUtil.browse("https://github.com/mzdm/embedded-dartpad#troubleshooting")
+                    }
+                }
+            }
+        })
     }
 }

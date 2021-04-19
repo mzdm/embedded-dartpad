@@ -62,7 +62,7 @@ class DartPadWindow(private val project: Project) : SimpleToolWindowPanel(false)
         addAll(
             ComponentPanel.of(
                 statusMessage("Dart Pad is not supported in this IDE environment."),
-                clickableLink("Read more ...", "https://www.google.com/"),
+                clickableLink("Read more ...", "https://github.com/mzdm/embedded-dartpad#troubleshooting"),
             ),
         )
     }

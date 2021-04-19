@@ -74,7 +74,7 @@ jobs:
   # Requires test job to be passed
   build:
     name: Build
-    needs: test
+#    needs: test
     runs-on: ubuntu-latest
     outputs:
       name: ${{ steps.properties.outputs.name }}

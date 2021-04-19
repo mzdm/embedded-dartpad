@@ -1,7 +1,7 @@
 # Embedded DartPad
 
 ![Build](https://github.com/mzdm/embedded-dartpad/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/com.github.mzdm.embedded_dartpad.svg)](https://plugins.jetbrains.com/plugin/com.github.mzdm.embedded_dartpad)
+[![Version](https://img.shields.io/jetbrains/plugin/v/16602-embedded-dartpad.svg)](https://plugins.jetbrains.com/plugin/16602-embedded-dartpad)
 
 [comment]: <> ([![Downloads]&#40;https://img.shields.io/jetbrains/plugin/d/com.github.mzdm.embedded_dartpad.svg&#41;]&#40;https://plugins.jetbrains.com/plugin/com.github.mzdm.embedded_dartpad&#41;)
 

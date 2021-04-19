@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>com.github.mzdm.embedded_dartpad</id>
+    <name>Embedded DartPad</name>
+    <vendor>mzdm</vendor>
+
+    <!-- Product and plugin compatibility requirements -->
+    <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="com.github.mzdm.embedded_dartpad.services.SettingsService"/>
+        <toolWindow
+                id=" DartPad" doNotActivateOnStart="true" anchor="right" icon="/icons/embedded_toolbar.svg"
+                factoryClass="com.github.mzdm.embedded_dartpad.toolwindow.DartPadWindowFactory"/>
+    </extensions>
+
+    <actions>
+        <group id="org.intellij.sdk.action.GroupedActions"
+               text="Embedded DartPad" description="Run selected code in the DartPad"
+               popup="true" icon="/icons/embedded_action.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <action id="com.github.mzdm.embedded_dartpad.action.PopupMenuAction_Dart" icon="/icons/logo_dart.svg"
+                    class="com.github.mzdm.embedded_dartpad.action.PopupMenuAction"
+                    text="Dart" description="Runs selected code in Dart">
+            </action>
+            <action id="com.github.mzdm.embedded_dartpad.action.PopupMenuAction_FlutterStateful"
+                    icon="/icons/logo_flutter.svg"
+                    class="com.github.mzdm.embedded_dartpad.action.PopupMenuAction"
+                    text="Flutter (Stateful)" description="Runs selected code in Flutter (Stateful widget)">
+            </action>
+            <action id="com.github.mzdm.embedded_dartpad.action.PopupMenuAction_FlutterNone"
+                    icon="/icons/logo_flutter.svg"
+                    class="com.github.mzdm.embedded_dartpad.action.PopupMenuAction"
+                    text="Flutter (None)" description="Runs selected code in Flutter outside of the widget tree">
+            </action>
+        </group>
+    </actions>
+</idea-plugin>

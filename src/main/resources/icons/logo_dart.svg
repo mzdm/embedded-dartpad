@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="body_1" width="16" height="16">
+
+<defs>
+    <radialGradient cx="49.32396%" cy="140.0766%" r="145.746%" gradientUnits="objectBoundingBox" id="1">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+<mask id="262">
+<path  transform="matrix(1 0 0 1 0 0)"   d="M172 96C 172 116.1487 163.9874 135.4928 149.7401 149.7401C 135.4928 163.9874 116.1487 172 96 172C 75.85128 172 56.50718 163.9874 42.25988 149.7401C 28.01258 135.4928 20 116.1487 20 96C 20 75.85128 28.01258 56.50718 42.25988 42.25988C 56.50718 28.01258 75.85128 20 96 20C 116.1487 20 135.4928 28.01258 149.7401 42.25988C 163.9874 56.50718 172 75.85128 172 96z" fill="white"/>
+</mask>
+</defs>
+
+<g transform="matrix(0.08333334 0 0 0.08333334 0 0)">
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M0 0L192 0L192 192L0 192L0 0z" stroke="none" fill="none" />
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M51 141L25 115C 21.92 111.83 20 107.37 20 103C 20 100.98 21.14 97.82 22 96L22 96L46 46L51 141z" stroke="none" fill="#01579B" fill-rule="nonzero" />
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M140 51L114 25C 111.73 22.72 107 20 103 20C 99.56 20 96.19 20.69 94 22L94 22L46 46L140 51z" stroke="none" fill="#40C4FF" fill-rule="nonzero" />
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M82 172L145 172L145 145L98 130L55 145L82 172" stroke="none" fill="#40C4FF" fill-rule="nonzero" />
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M46 127C 46 135.02 47.01 136.99 51 141L51 141L55 145L145 145L101 95L46 46L46 127z" stroke="none" fill="#29B6F6" fill-rule="nonzero" />
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M126 46L46 46L145 145L172 145L172 83L140 51C 135.51 46.49 131.51 46 126 46z" stroke="none" fill="#01579B" fill-rule="nonzero" />
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M52 142C 48 137.98 47 134.03 47 127L47 127L47 47L46 46L46 127C 46 134.03 46 135.98 52 142L52 142L55 145L52 142z" stroke="none" fill="#FFFFFF" fill-rule="nonzero" fill-opacity="0.2" />
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M171 82L171 144L144 144L145 145L172 145L172 83L171 82" stroke="none" fill="#263238" fill-rule="nonzero" fill-opacity="0.2" />
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M140 51C 135.04 46.04 130.98 46 125 46L125 46L46 46L47 47L125 47C 127.99 47 135.52 46.5 140 51z" stroke="none" fill="#FFFFFF" fill-rule="nonzero" fill-opacity="0.2" />
+	<g transform="matrix(1 0 0 1 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1 0 0)"  d="M171 82L140 51L114 25C 111.73 22.72 107 20 103 20C 99.56 20 96.19 20.69 94 22L94 22L46 46L22 96C 21.14 97.82 20 100.98 20 103C 20 107.37 21.92 111.83 25 115L25 115L48.96 138.79C 49.53 139.49 50.21 140.21 51 141L51 141L52 142L55 145L81 171L82 172L144 172L145 172L145 145L172 145L172 144.93L172 83L171 82z" stroke="none" mask="url(#262)" fill="url(#1)"  />
+</g>
+</svg>

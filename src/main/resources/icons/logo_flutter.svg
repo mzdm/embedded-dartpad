@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="body_1" width="13" height="16">
+
+<defs>
+    <linearGradient transform="matrix(1 0 0 1 0 0)"  id="1" x1="8024.17" y1="-4190.703" x2="8498.579" y2="-3716.294">
+        <stop stop-color="#1A237E" offset="0%"/>
+        <stop stop-color="#1A237E" offset="100%"/>
+    </linearGradient>
+    <radialGradient cx="4.074496%" cy="0%" r="305.4632%" gradientUnits="objectBoundingBox" id="241">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+<mask id="498">
+<path  transform="matrix(1 0 0 1 0 0)"   d="M11405.41 -687.5234C 11405.41 655.35 10871.38 1944.596 9921.827 2894.151C 8972.272 3843.706 7683.026 4377.729 6340.152 4377.729C 4997.279 4377.729 3708.032 3843.706 2758.478 2894.151C 1808.923 1944.596 1274.899 655.35 1274.899 -687.5234C 1274.899 -2030.397 1808.923 -3319.643 2758.478 -4269.198C 3708.032 -5218.753 4997.279 -5752.776 6340.152 -5752.776C 7683.026 -5752.776 8972.272 -5218.753 9921.827 -4269.198C 10871.38 -3319.643 11405.41 -2030.397 11405.41 -687.5234z" fill="white"/>
+</mask>
+</defs>
+
+<g transform="matrix(0.01543943 0 0 0.01534036 0 0)">
+	<g transform="matrix(1 0 0 1.000326 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1.000326 0 0)"  d="M838.99 481.52L520.53 481.52L241.9 760.21L401.09 919.41L838.99 481.52" stroke="none" fill="#54C5F8" fill-rule="nonzero" />
+	<g transform="matrix(1 0 0 1.000326 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1.000326 0 0)"  d="M162.27 680.59L3.01 521.33L520.53 3.81L838.99 3.81L162.27 680.59" stroke="none" fill="#54C5F8" fill-rule="nonzero" />
+	<g transform="matrix(1 0 0 1.000326 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1.000326 0 0)"  d="M401.09 919.41L520.53 1038.85L838.99 1038.85L560.35 760.21L401.09 919.41" stroke="none" fill="#01579B" fill-rule="nonzero" />
+	<g transform="matrix(1 0 0 1.000326 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1.000326 0 0)"  d="M401.09 919.41L637.27 837.66L560.35 760.21L401.09 919.41" stroke="none" fill="url(#1)" />
+	<g transform="matrix(1 0 0 1.000326 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1.000326 0 0)"  d="M241.8697 760.1782L401.0945 600.9534L560.3192 760.1782L401.0945 919.403L241.8697 760.1782z" stroke="none" fill="#29B6F6" fill-rule="nonzero" />
+	<g transform="matrix(1 0 0 1.000326 0 0)">
+	</g>
+    <path transform="matrix(1 0 0 1.000326 0 0)"  d="M838.99 481.52L560.35 760.15L838.99 1038.85L520.53 1038.85L401.09 919.41L241.84 760.15L520.54 481.51L838.99 481.51L838.99 481.52zM520.53 3.81L3.01 521.33L162.27 680.59L838.99 3.81L520.53 3.81z" stroke="none" mask="url(#498)" fill="url(#241)"  />
+</g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 640" width="13" height="13">
+  <defs>
+    <path d="M618.32 351.45v-67.77L432.29 106.5l-3.02 82.29L573.71 316.6 429.27 449.24v78.42l189.05-176.21z" id="a"/>
+    <path d="M370.66 55.63l27.12 6.75-128.44 516.15-27.12-6.75L370.66 55.63z" id="c"/>
+    <path d="M22.48 285.63v67.77l186.03 177.18 3.02-82.29L67.1 320.48l144.43-132.64v-78.42L22.48 285.63z" id="e"/>
+    <radialGradient id="b" gradientUnits="userSpaceOnUse" cx="523.8" cy="527.66" r="421.17">
+      <stop offset="50%" stop-color="#3ABDEE"/>
+      <stop offset="100%" stop-color="#02539a"/>
+    </radialGradient>
+    <radialGradient id="f" gradientUnits="userSpaceOnUse" cx="117.01" cy="109.42" r="421.17">
+      <stop offset="50%" stop-color="#02539a"/>
+      <stop offset="100%" stop-color="#3ABDEE"/>
+    </radialGradient>
+    <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="384.22" y1="59.01" x2="255.78" y2="575.15">
+      <stop offset="50%" stop-color="#02539a"/>
+      <stop offset="100%" stop-color="#3ABDEE"/>
+    </linearGradient>
+  </defs>
+  <use xlink:href="#a" fill="url(#b)"/>
+  <use xlink:href="#c" opacity=".99" fill="url(#d)"/>
+  <use xlink:href="#e" fill="url(#f)"/>
+</svg>

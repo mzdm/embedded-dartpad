@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 ### Fixed
+-
+
+## 0.0.3
+### Fixed
+- Compatibility issue with the newest IntelliJ version
+
+## 0.0.2
+### Fixed
 - Compatibility issues
 - README styling
 

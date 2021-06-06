@@ -1,12 +1,11 @@
 package com.github.mzdm.embedded_dartpad.toolwindow
 
+import com.github.mzdm.embedded_dartpad.app.helpers.ComponentList
+import com.github.mzdm.embedded_dartpad.app.helpers.addAll
 import com.github.mzdm.embedded_dartpad.browser.Browser
-import com.github.mzdm.embedded_dartpad.components.ComponentPanel
-import com.github.mzdm.embedded_dartpad.components.toolbar.toolbarActions
-import com.github.mzdm.embedded_dartpad.models.DartPadSettings
-import com.github.mzdm.embedded_dartpad.services.SettingsService
-import com.github.mzdm.embedded_dartpad.utils.HtmlContentRenderer
-import com.github.mzdm.embedded_dartpad.utils.addAll
+import com.github.mzdm.embedded_dartpad.dartpad.models.PadSettings
+import com.github.mzdm.embedded_dartpad.dartpad.services.PadSettingsService
+import com.github.mzdm.embedded_dartpad.toolwindow.components.toolbarActions
 import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
@@ -16,14 +15,15 @@ import com.intellij.ui.layout.panel
 import javax.swing.BoxLayout
 import javax.swing.SwingUtilities
 
-class DartPadWindow(private val project: Project) : SimpleToolWindowPanel(false) {
+class DartPadWindowPanel(private val project: Project) : SimpleToolWindowPanel(false) {
 
-    private val settingsService: SettingsService
+    private val padSettingsService: PadSettingsService
         get() = project.service()
-    private val settings: DartPadSettings
-        get() = settingsService.settings
+    private val settings: PadSettings
+        get() = padSettingsService.settings
 
     init {
+        // JBCEF browser throws an error on Android Studio
         val isJcefSupported: Boolean = try {
             JBCefApp.isSupported()
         } catch (t: Throwable) {
@@ -31,26 +31,27 @@ class DartPadWindow(private val project: Project) : SimpleToolWindowPanel(false)
         }
 
         if (!isJcefSupported) {
+            // TODO: Fallback to JavaFX browser.
             showUnsupportedMessage()
         } else {
             SwingUtilities.invokeLater {
-                initBrowserToolWindow()
+                initJbCefBrowser()
             }
         }
     }
 
-    private fun initBrowserToolWindow() {
+    private fun initJbCefBrowser() {
         val browser = Browser()
-        refresh(browser)
+        browser.refresh(settings)
 
         val verticalLayout = BoxLayout(this, BoxLayout.Y_AXIS)
         layout = verticalLayout
 
         addAll(
-            ComponentPanel.of(
+            ComponentList.of(
                 toolbarActions(
                     project,
-                    onRefresh = { refresh(browser) },
+                    onRefresh = { browser.refresh(settings) },
                 ),
                 browser.component,
             ),
@@ -58,10 +59,6 @@ class DartPadWindow(private val project: Project) : SimpleToolWindowPanel(false)
 
         validate()
         repaint()
-    }
-
-    private fun refresh(browser: Browser) {
-        browser.loadHTML(HtmlContentRenderer.load(settings))
     }
 
     private fun showUnsupportedMessage() {

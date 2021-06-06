@@ -1,12 +1,12 @@
-package com.github.mzdm.embedded_dartpad.services
+package com.github.mzdm.embedded_dartpad.dartpad.services
 
-import com.github.mzdm.embedded_dartpad.models.DartPadSettings
-import com.github.mzdm.embedded_dartpad.models.FlutterTemplate
-import com.github.mzdm.embedded_dartpad.models.Pad
+import com.github.mzdm.embedded_dartpad.dartpad.models.PadSettings
+import com.github.mzdm.embedded_dartpad.dartpad.models.FlutterTemplate
+import com.github.mzdm.embedded_dartpad.dartpad.models.Pad
 
 // Project service
-class SettingsService {
-    var settings: DartPadSettings = DartPadSettings()
+class PadSettingsService {
+    var settings: PadSettings = PadSettings()
         get() = field
         private set
 
@@ -23,6 +23,6 @@ class SettingsService {
     }
 
     fun reset() {
-        settings = DartPadSettings()
+        settings = PadSettings()
     }
 }

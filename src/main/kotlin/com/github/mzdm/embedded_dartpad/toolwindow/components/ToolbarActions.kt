@@ -1,7 +1,7 @@
-package com.github.mzdm.embedded_dartpad.components.toolbar
+package com.github.mzdm.embedded_dartpad.toolwindow.components
 
-import com.github.mzdm.embedded_dartpad.consts.Icons
-import com.github.mzdm.embedded_dartpad.services.SettingsService
+import com.github.mzdm.embedded_dartpad.app.data.Icons
+import com.github.mzdm.embedded_dartpad.dartpad.services.PadSettingsService
 import com.intellij.icons.AllIcons
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.ActionPlaces
@@ -21,17 +21,17 @@ fun toolbarActions(project: Project, onRefresh: () -> Unit): JComponent {
             AllIcons.Actions.Refresh,
             onAction = onRefresh,
         ),
-        PadToggleAction(
+        ToolbarPadToggleAction(
             project,
             "Flutter environment",
             null,
             IconLoader.getIcon(Icons.flutter_logo),
-            onSelected = onRefresh,
+            onToggled = onRefresh,
         ),
-        ToolbarTextAction(
+        ToolbarTextIconAction(
             "Reset", "Resets page to the default state", null,
             onAction = {
-                project.service<SettingsService>()
+                project.service<PadSettingsService>()
                     .reset()
                 onRefresh()
             },

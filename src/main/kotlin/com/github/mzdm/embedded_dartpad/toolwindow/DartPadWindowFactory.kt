@@ -13,7 +13,7 @@ class DartPadWindowFactory : ToolWindowFactory {
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
         val contentManager = toolWindow.contentManager
-        val content = contentManager.factory.createContent(DartPadWindow(project), null, true)
+        val content = contentManager.factory.createContent(DartPadWindowPanel(project), null, true)
         contentManager.addContent(content)
         toolWindow.show()
     }

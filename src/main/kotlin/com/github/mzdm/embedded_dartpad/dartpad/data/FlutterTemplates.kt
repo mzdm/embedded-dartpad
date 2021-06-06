@@ -1,7 +1,7 @@
-package com.github.mzdm.embedded_dartpad.helpers
+package com.github.mzdm.embedded_dartpad.dartpad.data
 
-import com.github.mzdm.embedded_dartpad.models.FlutterTemplate
-import com.github.mzdm.embedded_dartpad.models.Theme
+import com.github.mzdm.embedded_dartpad.dartpad.models.FlutterTemplate
+import com.github.mzdm.embedded_dartpad.dartpad.models.Theme
 
 fun getFlutterTemplate(flutterTemplate: FlutterTemplate, theme: Theme, widget: String?): String {
     val appTheme = theme.toString()
@@ -9,17 +9,11 @@ fun getFlutterTemplate(flutterTemplate: FlutterTemplate, theme: Theme, widget: S
     return when (flutterTemplate) {
         is FlutterTemplate.None -> flutterNoneTemplate(widget)
         is FlutterTemplate.Stateful -> flutterStatefulTemplate(appTheme, widget)
-        is FlutterTemplate.Stateless -> TODO("Implement more templates")
+        is FlutterTemplate.Stateless -> TODO("Not implemented yet.")
     }
 }
 
-fun dartTemplate(code: String?) = """
-void main() {
-  ${code ?: "print('Hello, World!');"}
-}
-"""
-
-fun flutterNoneTemplate(widget: String?) = """
+private fun flutterNoneTemplate(widget: String?) = """
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -42,10 +36,10 @@ ${widget ?: ""}
 
 """
 
-fun flutterStatefulTemplate(theme: String, widget: String?): String {
-    var editedWidget = widget
+private fun flutterStatefulTemplate(theme: String, widget: String?): String {
+    var methodWidget = widget
     if (widget != null && (widget.endsWith(",") || widget.endsWith(";"))) {
-        editedWidget = widget.substring(0, widget.length - 1)
+        methodWidget = widget.substring(0, widget.length - 1)
     }
     return """
 import 'package:flutter/material.dart';
@@ -80,7 +74,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
-    return ${editedWidget ?: "Text('Hello, World!'),"};
+    return ${methodWidget ?: "Text('Hello, World!'),"};
   }
 }
 

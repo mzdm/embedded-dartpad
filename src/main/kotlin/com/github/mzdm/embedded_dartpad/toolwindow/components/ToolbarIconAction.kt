@@ -1,4 +1,4 @@
-package com.github.mzdm.embedded_dartpad.components.toolbar
+package com.github.mzdm.embedded_dartpad.toolwindow.components
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent

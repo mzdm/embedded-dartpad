@@ -3,6 +3,12 @@
 # Changelog
 
 ## [Unreleased]
+### Updated
+- README
+- Dependencies
+- Code refactoring
+
+## 0.0.3
 ### Fixed
 - Compatibility issue with the newest IntelliJ version
 

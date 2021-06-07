@@ -1,29 +1,29 @@
-package com.github.mzdm.embedded_dartpad.utils
+package com.github.mzdm.embedded_dartpad.browser.utils
 
-import com.github.mzdm.embedded_dartpad.helpers.dartTemplate
-import com.github.mzdm.embedded_dartpad.helpers.getFlutterTemplate
-import com.github.mzdm.embedded_dartpad.models.DartPadSettings
-import com.github.mzdm.embedded_dartpad.models.Pad
-import com.github.mzdm.embedded_dartpad.models.Theme
+import com.github.mzdm.embedded_dartpad.dartpad.data.getDartTemplate
+import com.github.mzdm.embedded_dartpad.dartpad.data.getFlutterTemplate
+import com.github.mzdm.embedded_dartpad.dartpad.models.Pad
+import com.github.mzdm.embedded_dartpad.dartpad.models.PadSettings
+import com.github.mzdm.embedded_dartpad.dartpad.models.Theme
 import org.apache.commons.lang.StringEscapeUtils
 
 class HtmlContentRenderer {
     companion object {
-        fun load(dartPadSettings: DartPadSettings): String {
-            val code = dartPadSettings.code
+        fun load(padSettings: PadSettings): String {
+            val code = padSettings.code
+            val theme = Theme.LIGHT
+            val embedTheme = "dark"
 
-            // TODO: Change app theme as well(?)
+            // TODO: Change app theme.
 //            val theme = dartPadSettings.theme
-            val appTheme = Theme.LIGHT
-            val frameTheme = "dark"
 
-            val pad = dartPadSettings.pad.name.toLowerCase()
-            val flutterTemplate = dartPadSettings.flutterTemplate
+            val pad = padSettings.pad.name.toLowerCase()
+            val flutterTemplate = padSettings.flutterTemplate
 
             val codeTemplate = StringEscapeUtils.escapeHtml(
-                when (dartPadSettings.pad) {
-                    Pad.DART -> dartTemplate(code)
-                    Pad.FLUTTER -> getFlutterTemplate(flutterTemplate, appTheme, code)
+                when (padSettings.pad) {
+                    Pad.DART -> getDartTemplate(code)
+                    Pad.FLUTTER -> getFlutterTemplate(flutterTemplate, theme, code)
                 },
             )
 
@@ -68,7 +68,7 @@ class HtmlContentRenderer {
     
     <body>
     <pre>
-                <code class="language-run-dartpad:theme-${frameTheme}:mode-$pad:run-true:split-50:null_safety-true">
+                <code class="language-run-dartpad:theme-${embedTheme}:mode-$pad:run-true:split-50:null_safety-true">
     $codeTemplate
                 </code>
             </pre>

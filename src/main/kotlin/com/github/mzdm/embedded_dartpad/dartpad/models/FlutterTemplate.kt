@@ -1,4 +1,4 @@
-package com.github.mzdm.embedded_dartpad.models
+package com.github.mzdm.embedded_dartpad.dartpad.models
 
 sealed class FlutterTemplate {
     data class None(val widget: String?) : FlutterTemplate()

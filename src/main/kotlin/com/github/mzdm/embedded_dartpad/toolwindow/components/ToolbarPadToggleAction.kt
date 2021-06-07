@@ -1,21 +1,21 @@
-package com.github.mzdm.embedded_dartpad.components.toolbar
+package com.github.mzdm.embedded_dartpad.toolwindow.components
 
-import com.github.mzdm.embedded_dartpad.models.Pad
-import com.github.mzdm.embedded_dartpad.services.SettingsService
+import com.github.mzdm.embedded_dartpad.dartpad.models.Pad
+import com.github.mzdm.embedded_dartpad.dartpad.services.PadSettingsService
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.ToggleAction
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import javax.swing.Icon
 
-class PadToggleAction(
-    private val project: Project, text: String, desc: String?, icon: Icon?, val onSelected: () -> Unit,
+class ToolbarPadToggleAction(
+    private val project: Project, text: String, desc: String?, icon: Icon?, val onToggled: () -> Unit,
 ) : ToggleAction(text, desc, icon) {
 
-    private val settingsService: SettingsService
+    private val padSettingsService: PadSettingsService
         get() = project.service()
     private val currentPad: Pad
-        get() = settingsService.settings.pad
+        get() = padSettingsService.settings.pad
 
     override fun isSelected(e: AnActionEvent): Boolean {
         return currentPad == Pad.FLUTTER
@@ -23,10 +23,10 @@ class PadToggleAction(
 
     override fun setSelected(e: AnActionEvent, state: Boolean) {
         if (currentPad == Pad.FLUTTER) {
-            settingsService.setPad(Pad.DART)
+            padSettingsService.setPad(Pad.DART)
         } else {
-            settingsService.setPad(Pad.FLUTTER)
+            padSettingsService.setPad(Pad.FLUTTER)
         }
-        onSelected()
+        onToggled()
     }
 }

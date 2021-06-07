@@ -23,20 +23,19 @@ class DartPadWindowPanel(private val project: Project) : SimpleToolWindowPanel(f
         get() = padSettingsService.settings
 
     init {
-        // JBCEF browser throws an error on Android Studio
+        // JBCef browser throws an error on Android Studio
         val isJcefSupported: Boolean = try {
             JBCefApp.isSupported()
         } catch (t: Throwable) {
             false
         }
 
-        if (!isJcefSupported) {
-            // TODO: Fallback to JavaFX browser.
-            showUnsupportedMessage()
-        } else {
+        if (isJcefSupported) {
             SwingUtilities.invokeLater {
                 initJbCefBrowser()
             }
+        } else {
+            showUnsupportedMessage()
         }
     }
 
@@ -65,10 +64,10 @@ class DartPadWindowPanel(private val project: Project) : SimpleToolWindowPanel(f
         add(panel {
             row {
                 row {
-                    label("Embedded DartPad is not supported in this IDE version.")
+                    label("You're probably on Android Studio.\nEmbedded DartPad plugin is not supported in this IDE.")
                 }
                 row {
-                    link("Read more ...") {
+                    link("Read more for a workaround (#Troubleshooting section) ...") {
                         BrowserUtil.browse("https://github.com/mzdm/embedded-dartpad#troubleshooting")
                     }
                 }

@@ -15,10 +15,10 @@
 
 name: Build
 on:
-  # Trigger the workflow on pushes to only the 'main' and 'dev' branch
+  # Trigger the workflow on pushes to only the 'master' and 'dev' branch
   # (this avoids duplicate checks being run e.g. for dependabot pull requests).
   push:
-    branches: [main, dev]
+    branches: [master, dev]
 
   # Trigger the workflow on any pull request
   pull_request:

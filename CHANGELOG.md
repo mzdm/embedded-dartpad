@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 ### Updated
+- Dependencies
+
+## 0.0.4
+### Updated
 - README
 - Dependencies
 - Code refactoring

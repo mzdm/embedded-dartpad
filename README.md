@@ -2,12 +2,9 @@
 
 ![Build](https://github.com/mzdm/embedded-dartpad/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/16602-embedded-dartpad.svg)](https://plugins.jetbrains.com/plugin/16602-embedded-dartpad)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/com.github.mzdm.embedded_dartpad.svg)](https://plugins.jetbrains.com/plugin/com.github.mzdm.embedded_dartpad)
 
-[comment]: <> ([![Downloads]&#40;https://img.shields.io/jetbrains/plugin/d/com.github.mzdm.embedded_dartpad.svg&#41;]&#40;https://plugins.jetbrains.com/plugin/com.github.mzdm.embedded_dartpad&#41;)
-
-<p align="center">
-<img height="400" width="auto" src="https://raw.githubusercontent.com/mzdm/embedded-dartpad/master/previews/preview.gif" />
-</p>
+https://user-images.githubusercontent.com/67197047/128333525-ac53ab9d-869f-457f-b489-0e7dee16a412.mp4
 
 <!-- Plugin description -->
 <p>This plugin integrates <a href="https://dartpad.dev/">DartPad</a> directly into IntelliJ environment which lets you run Flutter &amp; 

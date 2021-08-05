@@ -3,6 +3,7 @@ package com.github.mzdm.embedded_dartpad.dartpad.services
 import com.github.mzdm.embedded_dartpad.dartpad.models.PadSettings
 import com.github.mzdm.embedded_dartpad.dartpad.models.FlutterTemplate
 import com.github.mzdm.embedded_dartpad.dartpad.models.Pad
+import com.github.mzdm.embedded_dartpad.dartpad.models.Theme
 
 // Project service
 class PadSettingsService {
@@ -12,6 +13,10 @@ class PadSettingsService {
 
     fun setPad(newPad: Pad) {
         settings = settings.copy(pad = newPad)
+    }
+
+    fun setTheme(newTheme: Theme) {
+        settings = settings.copy(theme = newTheme)
     }
 
     fun setWidget(newWidget: String?) {

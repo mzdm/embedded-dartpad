@@ -1,14 +1,11 @@
 package com.github.mzdm.embedded_dartpad.dartpad.data
 
 import com.github.mzdm.embedded_dartpad.dartpad.models.FlutterTemplate
-import com.github.mzdm.embedded_dartpad.dartpad.models.Theme
 
-fun getFlutterTemplate(flutterTemplate: FlutterTemplate, theme: Theme, widget: String?): String {
-    val appTheme = theme.toString()
-        .toLowerCase()
+fun getFlutterTemplate(flutterTemplate: FlutterTemplate, theme: String, widget: String?): String {
     return when (flutterTemplate) {
         is FlutterTemplate.None -> flutterNoneTemplate(widget)
-        is FlutterTemplate.Stateful -> flutterStatefulTemplate(appTheme, widget)
+        is FlutterTemplate.Stateful -> flutterStatefulTemplate(theme, widget)
         is FlutterTemplate.Stateless -> TODO("Not implemented yet.")
     }
 }

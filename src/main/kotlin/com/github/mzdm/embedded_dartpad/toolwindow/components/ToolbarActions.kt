@@ -1,6 +1,6 @@
 package com.github.mzdm.embedded_dartpad.toolwindow.components
 
-import com.github.mzdm.embedded_dartpad.app.data.Icons
+import com.github.mzdm.embedded_dartpad.app.constants.Icons
 import com.github.mzdm.embedded_dartpad.dartpad.services.PadSettingsService
 import com.intellij.icons.AllIcons
 import com.intellij.openapi.actionSystem.ActionManager
@@ -28,8 +28,15 @@ fun toolbarActions(project: Project, onRefresh: () -> Unit): JComponent {
             IconLoader.getIcon(Icons.flutter_logo),
             onToggled = onRefresh,
         ),
+        ToolbarThemeToggleAction(
+            project,
+            "Dark embed theme",
+            null,
+            IconLoader.getIcon(Icons.theme),
+            onToggled = onRefresh,
+        ),
         ToolbarTextIconAction(
-            "Reset", "Resets page to the default state", null,
+            "Reset", "Resets everything to default", null,
             onAction = {
                 project.service<PadSettingsService>()
                     .reset()

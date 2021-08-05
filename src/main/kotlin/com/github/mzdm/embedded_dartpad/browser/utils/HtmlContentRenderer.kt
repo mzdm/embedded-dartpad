@@ -4,20 +4,14 @@ import com.github.mzdm.embedded_dartpad.dartpad.data.getDartTemplate
 import com.github.mzdm.embedded_dartpad.dartpad.data.getFlutterTemplate
 import com.github.mzdm.embedded_dartpad.dartpad.models.Pad
 import com.github.mzdm.embedded_dartpad.dartpad.models.PadSettings
-import com.github.mzdm.embedded_dartpad.dartpad.models.Theme
 import org.apache.commons.lang.StringEscapeUtils
 
 class HtmlContentRenderer {
     companion object {
         fun load(padSettings: PadSettings): String {
             val code = padSettings.code
-            val theme = Theme.LIGHT
-            val embedTheme = "dark"
-
-            // TODO: Change app theme.
-//            val theme = dartPadSettings.theme
-
             val pad = padSettings.pad.name.toLowerCase()
+            val theme = padSettings.theme.name.toLowerCase()
             val flutterTemplate = padSettings.flutterTemplate
 
             val codeTemplate = StringEscapeUtils.escapeHtml(
@@ -68,7 +62,7 @@ class HtmlContentRenderer {
     
     <body>
     <pre>
-                <code class="language-run-dartpad:theme-${embedTheme}:mode-$pad:run-true:split-50:null_safety-true">
+                <code class="language-run-dartpad:theme-$theme:mode-$pad:run-true:split-50:null_safety-true">
     $codeTemplate
                 </code>
             </pre>
